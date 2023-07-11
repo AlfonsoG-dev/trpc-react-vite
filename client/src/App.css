@@ -1,0 +1,61 @@
+body
+{
+	background-color: #41576b;
+}
+
+.titulo
+{
+	text-align: center;
+}
+
+form
+{
+	text-align: center;
+	padding: 20px;
+}
+
+.panelFuncion
+{
+	text-align: center;
+}
+
+.panelRegistro
+{
+	position: relative;
+	margin: auto;
+	top: 60px;
+	width: 300px;
+}
+
+.btn
+{
+	padding: 10px;
+	text-decoration: none;
+	border: 2px solid black;
+}
+
+.registro
+{
+	position: fixed;
+	top: 20px;
+	right: 10px;
+}
+
+.btn:hover
+{
+	background-color: grey;
+}
+
+table,
+tr,
+td
+{
+	margin: auto;
+	border: 2px solid black;
+	padding: 10px;
+}
+
+td:hover
+{
+	background-color: white;
+}
