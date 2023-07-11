@@ -11,9 +11,7 @@ export default function PruebaLogin() {
 
             alert(nombre)
         } else {
-            return (
-                <p> no hay usuarios con ese nombre</p>
-            )
+            alert("no funciona")
         }
     }
     return (
