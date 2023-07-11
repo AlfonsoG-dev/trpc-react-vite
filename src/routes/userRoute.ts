@@ -45,6 +45,8 @@ const getUserById = publicProcedure.input(z.object({
 	return buscado;
 })
 
+
+//buscar por nombre
 const getUserByName = publicProcedure.input(z.object({
 	userName: z.string(),
 })).query(async function ({ input }) {
@@ -52,9 +54,16 @@ const getUserByName = publicProcedure.input(z.object({
 	return buscado
 })
 
+//eliminar el usuario
+const eliminarUsuario = publicProcedure.input(z.object({
+	userId: z.number()
+})).mutation(({ input }) => {
+	myUser.remove(input.userId)
+})
 export const userRouter = router({
 	get: listado,
 	create: addUser,
 	getById: getUserById,
-	getUserByName: getUserByName
+	getUserByName: getUserByName,
+	eliminarUsuario: eliminarUsuario
 })
