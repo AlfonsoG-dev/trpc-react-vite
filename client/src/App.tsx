@@ -9,7 +9,7 @@ import './App.css'
 //componentes
 import UserForm from './components/userForm'
 import ListaUsuarios from './components/listaUsuario'
-import Login from './components/Login'
+import Login from './components/PruebaLogin'
 
 //routes from components
 const router = createBrowserRouter([
