@@ -1,7 +1,6 @@
 import { QueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { listaUsuarios, getUserByName } from "../utils/fetchTrpc"
 import { setuid } from 'process';
 //utilizar el cliente para actualizar los datos 
 export default function ListaUsuarios() {

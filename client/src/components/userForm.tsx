@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import { trpc } from '../trpc'
+import { trpc } from '../utils/trpc'
 import { QueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 function UserForm() {
