@@ -15,11 +15,11 @@ import Login from './components/PruebaLogin'
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <ListaUsuarios />
+		element: <Login />
 	},
 	{
-		path: "/login",
-		element: <Login />
+		path: "/listado",
+		element: <ListaUsuarios />
 	},
 	{
 		path: "/registro",

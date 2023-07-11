@@ -16,11 +16,11 @@ export default function PruebaLogin() {
     }
     return (
         <>
-            <Link className="btn" to={"/"}>listado</Link>
+            <h1 className="titulo">login</h1>
             <form onSubmit={handleOnSubmit}>
                 <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} />
 
-                <button hidden={true}>Subit</button>
+                <button>Subit</button>
             </form>
         </>
     )

@@ -1,61 +1,52 @@
-body
-{
+body {
 	background-color: #41576b;
 }
 
-.titulo
-{
+.titulo {
 	text-align: center;
+	color: white;
 }
 
-form
-{
+form {
 	text-align: center;
 	padding: 20px;
 }
 
-.panelFuncion
-{
+.panelFuncion {
 	text-align: center;
 }
 
-.panelRegistro
-{
+.panelRegistro {
 	position: relative;
 	margin: auto;
 	top: 60px;
 	width: 300px;
 }
 
-.btn
-{
+.btn {
 	padding: 10px;
 	text-decoration: none;
 	border: 2px solid black;
 }
 
-.registro
-{
+.registro {
 	position: fixed;
 	top: 20px;
 	right: 10px;
 }
 
-.btn:hover
-{
+.btn:hover {
 	background-color: grey;
 }
 
 table,
 tr,
-td
-{
+td {
 	margin: auto;
 	border: 2px solid black;
 	padding: 10px;
 }
 
-td:hover
-{
+td:hover {
 	background-color: white;
 }
