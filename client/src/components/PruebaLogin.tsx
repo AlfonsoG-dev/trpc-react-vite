@@ -11,7 +11,7 @@ export default function PruebaLogin() {
 
             alert(nombre)
         } else {
-            alert("no funciona")
+            alert(`error-login_: el usuario${nombre} no está registrado`)
         }
     }
     return (
