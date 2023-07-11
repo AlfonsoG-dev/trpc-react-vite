@@ -2,6 +2,7 @@ import { QueryClient } from '@tanstack/react-query';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { setuid } from 'process';
+import { trpc } from '../utils/trpc';
 //utilizar el cliente para actualizar los datos 
 export default function ListaUsuarios() {
 
@@ -27,8 +28,19 @@ export default function ListaUsuarios() {
 	)
 }
 function DataUser() {
+	const listaUsers = trpc.usuario.get.useQuery()
 	return (
 		<tbody>
+			{listaUsers.data?.map(usuario => (
+				<tr>
+					<td>{usuario.id}</td>
+					<td>{usuario.nombre}</td>
+					<td>{usuario.email}</td>
+					<td>{usuario.password}</td>
+					<td>{usuario.rol}</td>
+					<td>{usuario.create_at}</td>
+				</tr>
+			))}
 		</tbody >
 	)
 }
