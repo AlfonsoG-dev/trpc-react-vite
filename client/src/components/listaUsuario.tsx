@@ -5,8 +5,7 @@ import { listaUsuarios, getUserByName } from "../utils/fetchTrpc"
 import { setuid } from 'process';
 //utilizar el cliente para actualizar los datos 
 export default function ListaUsuarios() {
-	const [user, setUser] = useState<string>('alf')
-	console.log(getUserByName(user).data)
+
 	return (
 		<div className='panelUsuairos'>
 			<Link className='btn registro' to={"/registro"}>Registro</Link>
