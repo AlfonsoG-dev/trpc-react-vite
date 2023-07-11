@@ -50,7 +50,7 @@ function UserForm() {
 	}
 	return (
 		<div className="panelRegistro">
-			<Link className="btn registro" to={"/"}>Listado</Link>
+			<Link className="btn registro" to={"/listado"}>Listado</Link>
 			<form onSubmit={handleSubmit}>
 				<h1>Registro usuario</h1>
 				<input type="number" value={user.id} placeholder="idUser" name="id" onChange={handleChange} hidden={true} />

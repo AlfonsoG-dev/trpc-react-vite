@@ -5,10 +5,14 @@ import { Link } from "react-router-dom";
 export default function PruebaLogin() {
     const [nombre, setNombre] = useState('')
     const getUserByName = trpc.usuario.getUserByName.useQuery({ userName: nombre });
+    const content = () => {
+        if (getUserByName.data)
+            return <Link className="btn" to={"/listado"}>Listado</Link>
+    }
     function handleOnSubmit(e: React.FormEvent) {
         e.preventDefault()
         if (getUserByName.data) {
-
+            //todo:redirecciona al momento de dar click
             alert(nombre)
         } else {
             alert(`error-login_: el usuario${nombre} no está registrado`)
@@ -22,6 +26,7 @@ export default function PruebaLogin() {
 
                 <button>Subit</button>
             </form>
+            {content()}
         </>
     )
 
