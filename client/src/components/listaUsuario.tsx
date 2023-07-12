@@ -1,7 +1,6 @@
-import { Link, useSubmit } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { trpc } from '../utils/trpc';
 import { QueryClient } from '@tanstack/react-query';
-import { createNamedExports } from 'typescript';
 //utilizar el cliente para actualizar los datos 
 export default function ListaUsuarios() {
 
