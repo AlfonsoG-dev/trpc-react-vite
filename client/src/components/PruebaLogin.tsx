@@ -1,21 +1,47 @@
-import { ChangeEvent, useState } from "react";
-import { trpc } from "../utils/trpc";
-import { Link } from "react-router-dom";
+import {ChangeEvent, useState} from "react";
+import {trpc} from "../utils/trpc";
+import {Link} from "react-router-dom";
 
 export default function PruebaLogin() {
-    const [nombre, setNombre] = useState('')
-    const getUserByName = trpc.usuario.getUserByName.useQuery({ userName: nombre });
+    const [nombre, setNombre] = useState('');
+    const getUserByName = trpc.usuario.getUserByName.useQuery({userName: nombre});
     const content = () => {
-        if (getUserByName.data)
-            return <Link className="btn" to={"/listado"}>Listado</Link>
-    }
+        if (getUserByName.data) {
+            return (
+                <>
+                    <ul>
+                        <li>
+                            <p>Nombre :_{getUserByName.data.nombre}</p>
+                        </li>
+                        <li>
+                            <p> Email:_ {getUserByName.data.email}</p>
+                        </li>
+                        <li>
+                            <p>Password:_ {getUserByName.data.password}</p>
+                        </li>
+                        <li>
+                            <p>create_date:_ {getUserByName.data.create_at}</p>
+                        </li>
+
+                    </ul>
+                    <Link className="btn" to={"/listado"}>Listado</Link>
+                </>
+            );
+        } else {
+            return (
+                <>
+                    <h1>No se encontro el usuario con el nombre <p>{nombre}</p></h1>
+                </>
+            );
+        }
+    };
     function handleOnSubmit(e: React.FormEvent) {
-        e.preventDefault()
+        e.preventDefault();
         if (getUserByName.data) {
             //todo:redirecciona al momento de dar click
-            alert(nombre)
+            alert(nombre);
         } else {
-            alert(`error-login_: el usuario${nombre} no está registrado`)
+            alert(`error-login_: el usuario${nombre} no está registrado`);
         }
     }
     return (
@@ -28,6 +54,6 @@ export default function PruebaLogin() {
             </form>
             {content()}
         </>
-    )
+    );
 
-}
+};
