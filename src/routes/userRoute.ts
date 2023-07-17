@@ -1,7 +1,7 @@
 import * as model from './../models/myModel';
-import {initTRPC} from '@trpc/server';
-import {z} from "zod";
-import {UserRepository} from '../services/query';
+import { initTRPC } from '@trpc/server';
+import { z } from "zod";
+import { UserRepository } from '../services/query';
 const myUser = new UserRepository();
 
 const t = initTRPC.create();
@@ -22,7 +22,7 @@ const addUser = publicProcedure.input(z.object({
     password: z.string(),
     rol: z.string()
 
-})).mutation(({input}) => {
+})).mutation(({ input }) => {
 
     const nuevo: model.User = {
         nombre: input.nombre,
@@ -39,8 +39,8 @@ const addUser = publicProcedure.input(z.object({
 
 const getUserById = publicProcedure.input(z.object({
     userId: z.number(),
-})).query(async function ({input}) {
-    const buscado: model.User = await myUser.readById(input.userId);
+})).query(async function ({ input }) {
+    const buscado: model.User | undefined = await myUser.readById(input.userId);
     return buscado;
 })
 
@@ -48,15 +48,15 @@ const getUserById = publicProcedure.input(z.object({
 //buscar por nombre
 const getUserByName = publicProcedure.input(z.object({
     userName: z.string(),
-})).query(async function ({input}) {
-    const buscado: model.User = await myUser.readUserByName(input.userName)
+})).query(async function ({ input }) {
+    const buscado: model.User | undefined = await myUser.readUserByName(input.userName)
     return buscado
 })
 
 //eliminar el usuario
 const eliminarUsuario = publicProcedure.input(z.object({
     userId: z.number()
-})).mutation(({input}) => {
+})).mutation(({ input }) => {
     myUser.remove(input.userId)
 })
 export const userRouter = router({
