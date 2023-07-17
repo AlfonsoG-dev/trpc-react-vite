@@ -16,6 +16,7 @@ export default function ListaUsuarios() {
                         <th>Email</th>
                         <th>Password</th>
                         <th>Rol</th>
+                        <th>Create_at</th>
                         <th>opciones</th>
                     </tr>
                 </thead>
