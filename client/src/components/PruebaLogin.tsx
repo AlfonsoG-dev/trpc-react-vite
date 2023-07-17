@@ -1,10 +1,11 @@
-import {ChangeEvent, useState} from "react";
-import {trpc} from "../utils/trpc";
-import {Link} from "react-router-dom";
+import { ChangeEvent, useState } from "react";
+import { trpc } from "../utils/trpc";
+import { Link } from "react-router-dom";
 
 export default function PruebaLogin() {
-    const [nombre, setNombre] = useState('');
-    const getUserByName = trpc.usuario.getUserByName.useQuery({userName: nombre});
+    const [nombre, setNombre] = useState<string>('');
+    //todo: necesito pasar esto a otro lado para que no busque exactamente cuando el valor es undefind
+    const getUserByName = trpc.usuario.getUserByName.useQuery({ userName: nombre });
     const content = () => {
         if (getUserByName.data) {
             return (
