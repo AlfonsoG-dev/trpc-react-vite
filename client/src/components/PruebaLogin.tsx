@@ -11,6 +11,7 @@ export default function PruebaLogin() {
             return (
                 <>
                     <ul>
+                        <h1>Welcome</h1>
                         <li>
                             <p>Nombre :_{getUserByName.data.nombre}</p>
                         </li>
