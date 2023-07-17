@@ -8,6 +8,7 @@ interface Cuenta extends mysql.RowDataPacket {
 	email: string;
 	password: string;
 	rol: string;
+	create_at: Date
 
 }
 
@@ -36,7 +37,7 @@ export class UserRepository {
 		return new Promise((resolve, reject) => {
 			conn.execute('select * from user where nombre = ?', [user_name], (err, res: Cuenta[]) => {
 				if (err) reject(err);
-				else resolve(res?.[0]['']);
+				else resolve(res?.[0]);
 			})
 		})
 	}
