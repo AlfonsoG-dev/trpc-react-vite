@@ -29,7 +29,7 @@ export class UserRepository {
 		return new Promise((resolve, reject) => {
 			conn.execute('select * from user where id = ?', [user_id], (err, res: Cuenta[]) => {
 				if (err) reject(err);
-				else resolve(res?.[0]['']);
+				else resolve(res?.[0]);
 			})
 		})
 	}
